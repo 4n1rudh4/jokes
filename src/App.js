@@ -4,7 +4,7 @@ function App(){
     const [backendData,setBackendData]= useState({});
     const [isCheck,setIsCheck]=useState(true);
     useEffect(()=>{
-        fetch("/api").then(
+        fetch("https://joke-server-production.up.railway.app/api").then(
             response => response.json()
         ).then(
             data => {
@@ -15,7 +15,7 @@ function App(){
 
     function handlechange(e){
         if (isCheck===true){
-            fetch(`/api/login?userId=${e}`).then(
+            fetch(`https://joke-server-production.up.railway.app/api/login?userId=${e}`).then(
                 response => response.json()
             ).then(
                 data => {
